@@ -12,11 +12,48 @@ body {
     "Lucida Sans", Arial, sans-serif;
 }
 
+/***************** EFFECTS ****************/
+
+/* MOUSE HOVER BUTTON */
+
+.effectButton {
+  border: 4px solid transparent;
+}
+.effectButton:hover {
+  border: 4px solid #2da1d7;
+}
+
+/* GRADIENTE */
+.effectBackground {
+  background: linear-gradient(-45deg, #2da1d7, #105870, #2da1d7, #105870);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* BLUR  */
+
+.effectBlur {
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
 /***************** PLAY ****************/
 
 #containerPlay {
-  display: none;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: space-around;
   margin: auto 15vw;
@@ -32,7 +69,6 @@ body {
   justify-content: center;
   width: 25vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
@@ -42,7 +78,6 @@ body {
   justify-content: center;
   width: 20vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
@@ -52,7 +87,6 @@ body {
   justify-content: center;
   width: 15vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
@@ -62,8 +96,6 @@ body {
   justify-content: center;
   width: 10vw;
   height: 10vh;
-  background: #98ddea;
-  color: #1570a5;
   margin: 2px;
   border-radius: 10px;
 }
@@ -75,8 +107,6 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
 }
 #torre2Play {
   width: 5vw;
@@ -85,8 +115,6 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
 }
 #torre3Play {
   width: 5vw;
@@ -95,22 +123,49 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
+}
+
+/***************** ESCOLHA ****************/
+
+#escolha {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 19vw;
+  height: fit-content;
+  top: 30vh;
+  left: 39vw;
+  padding: 18px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  color: #a4ffff;
+}
+
+#escolha button {
+  width: 130px;
+  padding: 0.35em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 300;
+  text-align: center;
+  transition: all 0.2s;
 }
 
 /***************** REGRAS ****************/
 
 #regras {
   display: none;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   position: fixed;
   width: 60vw;
   height: fit-content;
-  background-color: grey;
-  opacity: 90%;
   top: 16vh;
   left: 18vw;
   padding: 18px;
@@ -144,7 +199,6 @@ body {
 
 #containerJogada {
   display: none;
-  display: flex;
   align-items: center;
   justify-content: space-around;
   margin: auto 15vw;
@@ -153,28 +207,24 @@ body {
 #disco1 {
   width: 25vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
 #disco2 {
   width: 20vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
 #disco3 {
   width: 15vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
 #disco4 {
   width: 10vw;
   height: 10vh;
-  background: #2da1d7;
   margin: 2px;
   border-radius: 10px;
 }
@@ -187,7 +237,7 @@ body {
   flex-direction: column-reverse;
   align-items: center;
   box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
+  /* z-index: -1; */
 }
 #torre2 {
   width: 5vw;
@@ -197,7 +247,7 @@ body {
   flex-direction: column-reverse;
   align-items: center;
   box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
+  /* z-index: -1; */
 }
 #torre3 {
   width: 5vw;
@@ -207,22 +257,19 @@ body {
   flex-direction: column-reverse;
   align-items: center;
   box-shadow: 0px 0px 30px 0px #fffefe40;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 /***************** RESULTADO ****************/
 
 #containerResultado {
-  /* display: none; */
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
   width: 60vw;
   height: fit-content;
-  background-color: grey;
-  opacity: 90%;
   top: 25vh;
   left: 18vw;
   padding: 18px;
