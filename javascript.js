@@ -1,4 +1,15 @@
 
+
+function geracaoTorreHanoi(n){
+    const jogada = document.createElement('section')
+    const body = document.querySelector('body')
+
+    body.appendChild(jogada)
+    jogada.innerText = 'Fui criado'
+}
+
+geracaoTorreHanoi()
+
 const jogada = document.querySelector('#containerJogada')
 
 jogada.addEventListener('click', selectTower)
@@ -6,6 +17,22 @@ jogada.addEventListener('click', selectTower)
 let countClick = 0
 let disco = ''
 let torre = ''
+let mudancas = 0
+//console.log(qntsClicks)
+
+const showClik = document.createElement('span')
+
+// a função é responsável atualizar a quantidade de trocas realizadas
+// precisa confirmar o local do mostrador de contagem
+function atualizaClick (mudancas){
+
+    showClik.innerText = mudancas
+
+    jogada.appendChild(showClik)
+
+    console.log(showClik)
+
+}
 
 function selectTower(e) {
 
@@ -29,7 +56,8 @@ function selectTower(e) {
         
             changeTower(torre,disco) // chama a função que irá movimentar os discos
             countClick = 0 // zera o incremento, voltando a ser o 'primero click'
-    
+
+
         }
     }
 }
@@ -50,10 +78,19 @@ function changeTower(tower, disc){
 
         tagTower.appendChild(tagDisc)
 
+        mudancas++ //#Bonus = implenta a contagem de clicks no jogo. No botão reset, zerar a contagem.
+        
+        atualizaClick(mudancas) // chama a função que exibe na tela a contagem das trocas
+
     // a condição abaixo compara os tamanhos do ultimo filho de cada torre e é executada quando o disco do primero click por menor que o disco existe na torre do segundo click
     }else if(tagDisc.clientWidth < DiscTowerChange.clientWidth){
 
         tagTower.appendChild(tagDisc)
+
+        mudancas++ //#Bonus = implenta a contagem de clicks no jogo. No botão reset, zerar a contagem.
+        
+
+        atualizaClick(mudancas) // chama a função que exibe na tela a contagem das trocas
     }
 
 }
