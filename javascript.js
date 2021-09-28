@@ -3,22 +3,25 @@ const jogada = document.querySelector('#containerJogada')
 
 jogada.addEventListener('click', selectTower)
 
+
 let countClick = 0
 let disco = ''
 let torre = ''
 
 function selectTower(e) {
 
+    console.log("O target do click é: " + e.target.id)
+    
     // a condição abaixo valida se o click foi realizado nas "hastes" da torre
     if(e.target.tagName === 'DIV'){
-        
+                
         torre = e.target.id 
-
+        
         // valida a condição de primeiro click
         if(countClick === 0){
-
-        disco = selectDisc(torre) // devolve o id do último 'filho' da torre
-
+           
+            disco = selectDisc(torre) // devolve o id do último 'filho' da torre
+            
             // a condição abaixo verifica se o primeiro click foi dado numa torre vazia e caso verdadeiro ele não permite que o click avance para o segundo click
             if(disco !== null){
                 countClick++ // incremento para validação do segundo click
@@ -27,12 +30,17 @@ function selectTower(e) {
             // se disco null então countclick igual a zero
     
         } else if(countClick === 1){
+
+            console.log("O valor de click é igual a 1")
         
             changeTower(torre,disco) // chama a função que irá movimentar os discos
             countClick = 0 // zera o incremento, voltando a ser o 'primero click'
     
         }
     }
+
+    // ao fim de cada jogada, a função verifica se há a condição de vitória
+    win()
 }
 
 // função dedicada a troca dos discos entre as torres
@@ -78,23 +86,51 @@ function selectDisc(id){
 
 // ***************** VARIÁVEIS ***************//
 
-
 const containerPlay = document.querySelector("#containerPlay")
 const torre2Play = document.querySelector("#torre2Play")
 const containerRegras = document.querySelector("#regras")
 const containerJogada = document.querySelector("#containerJogada")
 const containerResultado = document.querySelector("#containerResultado")
 const escolha = document.querySelector("#escolha")
+const torre3 = document.querySelector("#torre3")
+const torre1 = document.querySelector("#torre1")
+const jogarNovamente = document.querySelector("#jogarNovamente")
+
 
 // ***************** PLAY BUTTON ***************//
-
 
 // Escolha da dificuldade
 torre2Play.addEventListener("click", dificuldade)
 
 function dificuldade (e) {
+    
+    escolha.style.display = "flex"
+    
+    
+}
 
-   escolha.style.display = "flex"
 
+// ***************** CONDIÇÃO DE VITÓRIA ***************//
 
+function win(){
+    if (torre3.childElementCount === 4) {
+        containerResultado.style.display = "flex"
+    }
+}
+
+// ***************** JOGAR DE NOVO ***************//
+
+jogarNovamente.addEventListener("click", reset)
+
+function reset() {
+    // busca todos os filhos da torre 3 e joga na torre 1
+console.log(torre3.children)
+let arr = torre3.children
+
+arr.forEach(element => {
+
+    torre1.appendChild(element)
+    
+});
+    // esconde a tela de resultado
 }
