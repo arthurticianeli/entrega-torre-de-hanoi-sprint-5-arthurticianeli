@@ -8,38 +8,65 @@ let disco = ''
 let torre = ''
 
 function selectTower(e) {
+
+    // a condição abaixo valida se o click foi realizado nas "hastes" da torre
+    if(e.target.tagName === 'DIV'){
+        torre = e.target.id 
+
+        // valida a condição de primeiro click
+        if(countClick === 0){
+
+            disco = selectDisc(torre) // devolve o id do último 'filho' da torre
+
+            // a condição abaixo verifica se o primeiro click foi dado numa torre vazia e caso verdadeiro ele não permite que o click avance para o segundo click
+            if(disco !== null){
+                countClick++ // incremento para validação do segundo click
+            }
+            
+            // se disco null então countclick igual a zero
     
-    torre = e.target.id
-    //torre = e.target
-    console.log(torre)
-
-    if(countClick === 0){
-        disco = selectDisc(torre)
-        //disco = torre.lastElementChild
-        console.log(disco)
-        countClick++
-        console.log(countClick)
-
-    }else if(countClick === 1){
-
-        //torre.appendChild(disco)
-        //console.log(torre, disco)
-        changeTower(torre,disco)
-        countClick = 0
-
+        }else if(countClick === 1){
+        
+            changeTower(torre,disco) // chama a função que irá movimentar os discos
+            countClick = 0 // zera o incremento, voltando a ser o 'primero click'
+    
+        }
     }
 }
 
-
+// função dedicada a troca dos discos entre as torres
 function changeTower(tower, disc){
 
-    document.getElementById(tower).appendChild(document.getElementById(disc))
+    const tagTower = document.getElementById(tower) // traz o elemento html específico que irá receber o disco
+    const tagDisc = document.getElementById(disc) // traz o elemento html específico que será movimentado
+
+    const DiscTowerChange = document.getElementById(selectDisc(tower)) // busca na torre do 'segundo click' o ultimo elemento para validação da regra de negócio
+
+
+    // *** validação das regras de negócio ***
+
+    // a condição abaixo verifica se a torre do segundo clique é vazia e permite a troca
+    if(selectDisc(tower) === null){
+
+        tagTower.appendChild(tagDisc)
+
+    // a condição abaixo compara os tamanhos do ultimo filho de cada torre e é executada quando o disco do primero click por menor que o disco existe na torre do segundo click
+    }else if(tagDisc.clientWidth < DiscTowerChange.clientWidth){
+
+        tagTower.appendChild(tagDisc)
+    }
 
 }
 
+// função dedicada a retornar o ID do ultimo filho da torre clicada
 function selectDisc(id){
-    const torre2 = document.querySelector(`#${id}`)
-    const disco = torre2.lastElementChild
+    const torreClicada = document.querySelector(`#${id}`)
+    const disco = torreClicada.lastElementChild
+
+    // caso a torre clicada não tenha discos, ele retorna null
+    if(disco === null){
+        return disco
+    }
 
     return disco.id
 }
