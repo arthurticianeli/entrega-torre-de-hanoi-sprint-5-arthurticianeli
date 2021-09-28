@@ -5,12 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="reset" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- TELA DE PLAY -->
-    <section id="containerPlay"></section>
+    <section id="containerPlay">
+      <div id="torre1Play"></div>
+
+      <div id="torre2Play">
+        <div id="disco1Play">HANOI</div>
+        <div id="disco2Play">DE</div>
+        <div id="disco3Play">TORRE</div>
+        <div id="disco4Play">PLAY</div>
+      </div>
+
+      <div id="torre3Play"></div>
+    </section>
     <!-- TELA DE PLAY -->
+
+    <!-- REGRAS -->
+    <div id="regras">
+      <p>Regras</p>
+      <ol>
+        <li>Apenas um disco pode ser movido por vez.</li>
+        <li>
+          Cada movimento consiste de pegar o disco de cima de uma das pilhas e
+          movê-lo para o topo de outra pilha.
+        </li>
+        <li>Nenhum disco pode ser colocado no topo de um disco menor.</li>
+        <li>
+          Seu objetivo é mover todas as peças para a última coluna da direita!
+          Bom jogo!
+        </li>
+      </ol>
+      <span>X</span>
+    </div>
+    <!-- REGRAS -->
 
     <!-- TELA DE JOGADA -->
     <section id="containerJogada">
@@ -28,9 +59,78 @@
     <!-- TELA DE JOGADA -->
 
     <!-- TELA DE RESULTADO -->
-    <section id="containerResultado"></section>
+    <section id="containerResultado">
+      <h2>PARABÉNS!!! VOCÊ GANHOU!</h2>
+
+      <button id="jogarNovamente">Jogar novamente</button>
+      <button id="escolherDificuldade">Escolher outra dificuldade</button>
+    </section>
     <!-- TELA DE RESULTADO -->
 
+    <!-- FOOTER -->
+    <footer></footer>
+    <!-- FOOTER -->
+
+    <!-- ESTRELAS -->
+    <div>
+      <div class="asterisk1 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk2 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk3 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk4 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk5 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk6 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk7 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk8 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk9 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk10 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk11 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk12 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk13 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk14 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk15 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk16 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <!-- ESTRELAS -->
+
     <script src="javascript.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0da515bdfc.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
