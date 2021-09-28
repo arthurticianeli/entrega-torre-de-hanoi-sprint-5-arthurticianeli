@@ -14,18 +14,28 @@
       <div id="torre1Play"></div>
 
       <div id="torre2Play">
-        <div id="disco1Play">HANOI</div>
-        <div id="disco2Play">DE</div>
-        <div id="disco3Play">TORRE</div>
-        <div id="disco4Play">PLAY</div>
+        <div id="disco1Play" class="effectBackground effectButton">HANOI</div>
+        <div id="disco2Play" class="effectBackground effectButton">DE</div>
+        <div id="disco3Play" class="effectBackground effectButton">TORRE</div>
+        <div id="disco4Play" class="effectBackground effectButton">PLAY</div>
       </div>
 
       <div id="torre3Play"></div>
     </section>
     <!-- TELA DE PLAY -->
 
+    <!-- ESCOLHA DA DIFICULDADE -->
+    <div id="escolha" class="effectBlur">
+      <p>Escolha uma dificuldade</p>
+      <button id="dificuldade1" class="effectButton">Fácil</button>
+      <button id="dificuldade2" class="effectButton">Normal</button>
+      <button id="dificuldade3" class="effectButton">Difícil</button>
+    </div>
+
+    <!-- ESCOLHA DA DIFICULDADE -->
+
     <!-- REGRAS -->
-    <div id="regras">
+    <div id="regras" class="effectBlur">
       <p>Regras</p>
       <ol>
         <li>Apenas um disco pode ser movido por vez.</li>
@@ -46,10 +56,10 @@
     <!-- TELA DE JOGADA -->
     <section id="containerJogada">
       <div id="torre1">
-        <div id="disco1"></div>
-        <div id="disco2"></div>
-        <div id="disco3"></div>
-        <div id="disco4"></div>
+        <div id="disco1" class="effectBackground"></div>
+        <div id="disco2" class="effectBackground"></div>
+        <div id="disco3" class="effectBackground"></div>
+        <div id="disco4" class="effectBackground"></div>
       </div>
 
       <div id="torre2"></div>
@@ -59,7 +69,7 @@
     <!-- TELA DE JOGADA -->
 
     <!-- TELA DE RESULTADO -->
-    <section id="containerResultado">
+    <section id="containerResultado" class="effectBlur">
       <h2>PARABÉNS!!! VOCÊ GANHOU!</h2>
 
       <button id="jogarNovamente">Jogar novamente</button>
