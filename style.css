@@ -20,6 +20,7 @@ body {
   border: 4px solid transparent;
 }
 .effectButton:hover {
+  cursor: pointer;
   border: 4px solid #2da1d7;
 }
 
@@ -232,12 +233,10 @@ body {
 #torre1 {
   width: 5vw;
   height: 80vh;
-  background: linear-gradient(180deg, #105870 0%, #011b2e 64.58%);
+  background: linear-gradient(180deg, #0b0c0c 0%, #011b2e 64.58%);
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  /* z-index: -1; */
 }
 #torre2 {
   width: 5vw;
@@ -246,8 +245,6 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  /* z-index: -1; */
 }
 #torre3 {
   width: 5vw;
@@ -256,8 +253,6 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: 0px 0px 30px 0px #fffefe40;
-  /* z-index: -1; */
 }
 
 /***************** RESULTADO ****************/
@@ -476,6 +471,8 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: #011b2e;
+  justify-content: center;
+  align-items: center;
   height: 20vh;
   font-size: 12px;
   font-style: normal;
@@ -484,6 +481,24 @@ footer {
   text-align: left;
   padding: 5px;
 }
+
+/***************** CONTADOR ******************/
+
+footer span {
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  background-color: #105870;
+  border: 4px solid #4a707c;
+}
+
+/***************** MEDIA QUERIES ******************/
 
 @media (max-width: 425px) {
   #containerPlay {

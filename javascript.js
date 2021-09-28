@@ -8,7 +8,6 @@
 // }
 
 
-
 function geracaoTorreHanoi(n){
     const jogada = document.createElement('section')
     const body = document.querySelector('body')
@@ -36,17 +35,15 @@ const showClik = document.createElement('span')
 // precisa confirmar o local do mostrador de contagem
 function atualizaClick (mudancas){
 
-    showClik.innerText = mudancas
+    showClik.innerText = "Quantidade de clicks: " + mudancas
 
-    jogada.appendChild(showClik)
+    document.querySelector("footer").appendChild(showClik)
 
-    console.log(showClik)
 
 }
 
 function selectTower(e) {
 
-    console.log("O target do click é: " + e.target.id)
     
     // a condição abaixo valida se o click foi realizado nas "hastes" da torre
     if(e.target.tagName === 'DIV'){
@@ -141,6 +138,8 @@ const escolha = document.querySelector("#escolha")
 const torre3 = document.querySelector("#torre3")
 const torre1 = document.querySelector("#torre1")
 const jogarNovamente = document.querySelector("#jogarNovamente")
+const escolher = document.querySelector("#escolherDificuldade")
+const rodape = document.querySelector("footer")
 
 
 // ***************** PLAY BUTTON ***************//
@@ -178,17 +177,37 @@ function win(){
 
 // ***************** JOGAR DE NOVO ***************//
 
-jogarNovamente.addEventListener("click", reset)
+escolher.addEventListener("click", reset)
 
 function reset() {
-    // busca todos os filhos da torre 3 e joga na torre 1
+ 
+    torre3.innerHTML = ""
+    rodape.innerHTML = ""
 
-let arr = torre3.children
 
-arr.forEach(element => {
 
-    torre1.appendChild(element)
-    
-});
-    // esconde a tela de resultado
+    containerResultado.style.display = "none"
+    containerJogada.style.display = "none"
+    containerPlay.style.display = "flex"
+
+
+    // INSERIR A FUNÇÃO QUE CRIA OS DISCOS
+
 }
+
+
+// ***************** ESCOLHER DIFICULDADE ***************//
+
+jogarNovamente.addEventListener("click", escolherDificuldade)
+
+function escolherDificuldade() {
+ 
+    torre3.innerHTML = ""
+
+    containerResultado.style.display = "none"
+    containerPlay.style.display = "flex"
+
+
+}
+
+
