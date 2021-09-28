@@ -11,12 +11,13 @@ function selectTower(e) {
 
     // a condição abaixo valida se o click foi realizado nas "hastes" da torre
     if(e.target.tagName === 'DIV'){
+        
         torre = e.target.id 
 
         // valida a condição de primeiro click
         if(countClick === 0){
 
-            disco = selectDisc(torre) // devolve o id do último 'filho' da torre
+        disco = selectDisc(torre) // devolve o id do último 'filho' da torre
 
             // a condição abaixo verifica se o primeiro click foi dado numa torre vazia e caso verdadeiro ele não permite que o click avance para o segundo click
             if(disco !== null){
@@ -25,7 +26,7 @@ function selectTower(e) {
             
             // se disco null então countclick igual a zero
     
-        }else if(countClick === 1){
+        } else if(countClick === 1){
         
             changeTower(torre,disco) // chama a função que irá movimentar os discos
             countClick = 0 // zera o incremento, voltando a ser o 'primero click'
