@@ -43,11 +43,10 @@ function atualizaClick (mudancas){
 }
 
 function selectTower(e) {
-
     
     // a condição abaixo valida se o click foi realizado nas "hastes" da torre
     if(e.target.tagName === 'DIV'){
-                
+
         torre = e.target.id 
         
         // valida a condição de primeiro click
@@ -135,11 +134,13 @@ const containerRegras = document.querySelector("#regras")
 const containerJogada = document.querySelector("#containerJogada")
 const containerResultado = document.querySelector("#containerResultado")
 const escolha = document.querySelector("#escolha")
-const torre3 = document.querySelector("#torre3")
+const rodape = document.querySelector("footer")
 const torre1 = document.querySelector("#torre1")
+const torre2 = document.querySelector("#torre2")
+const torre3 = document.querySelector("#torre3")
 const jogarNovamente = document.querySelector("#jogarNovamente")
 const escolher = document.querySelector("#escolherDificuldade")
-const rodape = document.querySelector("footer")
+const fechar = document.querySelector("#regras span")
 
 
 // ***************** PLAY BUTTON ***************//
@@ -162,34 +163,42 @@ function mostrarJogada (e){
     escolha.style.display = "none"
     containerPlay.style.display = "none"
     containerJogada.style.display = "flex"
+    containerRegras.style.display = "flex"
 
     return e.target.id
 
 }
 
+// ***************** FECHAR REGRAS ***************//
+
+fechar.addEventListener("click", close)
+
+function close() {
+     containerRegras.style.display = "none"
+
+    //  CHAMAR FUNÇÃO QUE CRIA OS DISCOS
+}
+
+
 // ***************** CONDIÇÃO DE VITÓRIA ***************//
 
 function win(){
-    if (torre3.childElementCount === 4) {
+    if (torre1.childElementCount === 0 && torre2.childElementCount === 0) {
         containerResultado.style.display = "flex"
     }
 }
 
 // ***************** JOGAR DE NOVO ***************//
 
-escolher.addEventListener("click", reset)
+jogarNovamente.addEventListener("click", reset)
 
 function reset() {
  
     torre3.innerHTML = ""
     rodape.innerHTML = ""
-
-
+    mudancas = 0
 
     containerResultado.style.display = "none"
-    containerJogada.style.display = "none"
-    containerPlay.style.display = "flex"
-
 
     // INSERIR A FUNÇÃO QUE CRIA OS DISCOS
 
@@ -198,15 +207,17 @@ function reset() {
 
 // ***************** ESCOLHER DIFICULDADE ***************//
 
-jogarNovamente.addEventListener("click", escolherDificuldade)
+escolher.addEventListener("click", escolherDificuldade)
 
 function escolherDificuldade() {
  
     torre3.innerHTML = ""
+    rodape.innerHTML = ""
+    mudancas = 0
 
     containerResultado.style.display = "none"
+    containerJogada.style.display= "none"
     containerPlay.style.display = "flex"
-
 
 }
 
