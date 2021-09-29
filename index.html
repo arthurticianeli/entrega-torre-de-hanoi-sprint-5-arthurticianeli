@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torre de Hanoi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TELA DE PLAY -->
+    <section id="containerPlay">
+      <div id="torre1Play"></div>
+
+      <div id="torre2Play">
+        <div id="disco1Play" class="effectBackground effectButton">HANOI</div>
+        <div id="disco2Play" class="effectBackground effectButton">DE</div>
+        <div id="disco3Play" class="effectBackground effectButton">TORRE</div>
+        <div id="disco4Play" class="effectBackground effectButton">PLAY</div>
+      </div>
+
+      <div id="torre3Play"></div>
+    </section>
+    <!-- TELA DE PLAY -->
+
+    <!-- ESCOLHA DA DIFICULDADE -->
+    <div id="escolha" class="effectBlur">
+      <p>Escolha uma dificuldade</p>
+      <button id="dificuldade1" class="effectButton">Fácil</button>
+      <button id="dificuldade2" class="effectButton">Normal</button>
+      <button id="dificuldade3" class="effectButton">Difícil</button>
+    </div>
+    <!-- ESCOLHA DA DIFICULDADE -->
+
+    <!-- REGRAS -->
+    <div id="regras" class="effectBlur">
+      <p>Regras</p>
+      <ol>
+        <li>Apenas um disco pode ser movido por vez.</li>
+        <li>
+          Cada movimento consiste de pegar o disco de cima de uma das pilhas e
+          movê-lo para o topo de outra pilha.
+        </li>
+        <li>Nenhum disco pode ser colocado no topo de um disco menor.</li>
+        <li>
+          Seu objetivo é mover todas as peças para a última coluna da direita!
+          Bom jogo!
+        </li>
+      </ol>
+      <span class="effectButton">X</span>
+    </div>
+    <!-- REGRAS -->
+
+    <!-- TELA DE JOGADA -->
+    <section id="containerJogada">
+
+    </section>
+    <!-- TELA DE JOGADA -->
+
+    <!-- TELA DE RESULTADO -->
+    <section id="containerResultado" class="effectBlur">
+      <h2>PARABÉNS!!! VOCÊ GANHOU!</h2>
+
+      <button id="jogarNovamente" class="effectButton">Jogar novamente</button>
+      <button id="escolherDificuldade" class="effectButton">
+        Escolher outra dificuldade
+      </button>
+    </section>
+    <!-- TELA DE RESULTADO -->
+
+    <!-- FOOTER -->
+    <footer></footer>
+    <!-- FOOTER -->
+
+    <!-- ESTRELAS -->
+
+    <div class="moon"></div>
+    <div>
+      <div class="asterisk1 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk2 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk3 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk4 FadeInAndOut1">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk5 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk6 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk7 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk8 FadeInAndOut2">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk9 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk10 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk11 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk12 FadeInAndOut3">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <div class="asterisk13 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk14 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk15 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="asterisk16 FadeInAndOut4">
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <!-- ESTRELAS -->
+
+    <script src="javascript.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0da515bdfc.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
