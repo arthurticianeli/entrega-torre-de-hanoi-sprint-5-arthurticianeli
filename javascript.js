@@ -1,23 +1,59 @@
-// Escolha da dificuldade
-// torre2Play.addEventListener("click", dificuldade)
 
-// function dificuldade (e) {
+// Escolha da dificuldade3
+/*torre2Play.addEventListener("click", dificuldade)
 
-//    escolha.style.display = "flex"
+function dificuldade (e) {
 
-// }
-
-function geracaoTorreHanoi(n){
-    const jogada = document.createElement('section')
-    const body = document.querySelector('body')
-
-    body.appendChild(jogada)
-    jogada.innerText = 'Fui criado'
-}
-
-geracaoTorreHanoi()
+   escolha.style.display = "flex"
+}*/
 
 const jogada = document.querySelector('#containerJogada')
+
+let nivelDificuldade = ''
+
+// essa função gera as torres e discos no HTML via DOM
+// o parametro N é passado pela função mostrarJogada, onde o usuário escolha o nível de dificuldade
+function geracaoTorreHanoi(n){
+
+    // esse laço cria as 3 torres
+    for(let i=0; i<3; i++){
+        const torresJogo = document.createElement('div')
+        torresJogo.id = `torre${i+1}`
+        jogada.appendChild(torresJogo)
+    }
+    geracaoDisco(n)
+}
+
+function geracaoDisco(n){
+    const primeiraTorre = document.getElementById('torre1') // variavel encontra e armazena a primeira torre
+
+    // cada uma das condições abaixo servem para gerar uma quantidade diferente de discos, elevando a dificuldade do jogo
+    if(n === 'dificuldade1'){
+
+        for(let i=0; i<3; i++){
+            const discosDoJogo = document.createElement('div')
+            discosDoJogo.id = `disco${i+1}`
+            primeiraTorre.appendChild(discosDoJogo)
+            discosDoJogo.classList.add('effectBackground', 'effectButton')
+        }
+    }else if(n === 'dificuldade2'){
+        for(let i=0; i<4; i++){
+            const discosDoJogo = document.createElement('div')
+            discosDoJogo.id = `disco${i+1}`
+            primeiraTorre.appendChild(discosDoJogo)
+            discosDoJogo.classList.add('effectBackground', 'effectButton')
+        }
+    }else if(n === 'dificuldade3'){
+        for(let i=0; i<5; i++){
+            const discosDoJogo = document.createElement('div')
+            discosDoJogo.id = `disco${i+1}`
+            primeiraTorre.appendChild(discosDoJogo)
+            discosDoJogo.classList.add('effectBackground', 'effectButton')
+        }
+    }
+}
+
+
 
 jogada.addEventListener('click', selectTower)
 
@@ -37,7 +73,6 @@ function atualizaClick (mudancas){
     showClik.innerText = "Quantidade de movimentos: " + mudancas
 
     document.querySelector("footer").appendChild(showClik)
-
 
 }
 
@@ -68,10 +103,12 @@ function selectTower(e) {
 
 
         }
+
+        win()
     }
 
     // ao fim de cada jogada, a função verifica se há a condição de vitória
-    win()
+    //win()
 }
 
 // função dedicada a troca dos discos entre as torres
@@ -133,9 +170,8 @@ const containerJogada = document.querySelector("#containerJogada")
 const containerResultado = document.querySelector("#containerResultado")
 const escolha = document.querySelector("#escolha")
 const rodape = document.querySelector("footer")
-const torre1 = document.querySelector("#torre1")
-const torre2 = document.querySelector("#torre2")
-const torre3 = document.querySelector("#torre3")
+
+
 const jogarNovamente = document.querySelector("#jogarNovamente")
 const escolher = document.querySelector("#escolherDificuldade")
 const fechar = document.querySelector("#regras span")
@@ -150,6 +186,8 @@ function dificuldade (e) {
     
     escolha.style.display = "flex"
 
+    //console.log(e.target)
+
 //  CHAMAR FUNÇÃO QUE CRIA OS DISCOS
     
 }
@@ -158,6 +196,7 @@ function dificuldade (e) {
 
 escolha.addEventListener("click", mostrarJogada)
 
+
 function mostrarJogada (e){
 
     escolha.style.display = "none"
@@ -165,7 +204,9 @@ function mostrarJogada (e){
     containerJogada.style.display = "flex"
     containerRegras.style.display = "flex"
 
-    return e.target.id
+    nivelDificuldade = e.target.id
+
+    return geracaoTorreHanoi(nivelDificuldade)
 
 
 }
@@ -183,6 +224,9 @@ function close() {
 // ***************** CONDIÇÃO DE VITÓRIA ***************//
 
 function win(){
+    const torre1 = document.querySelector("#torre1")
+    const torre2 = document.querySelector("#torre2")
+
     if (torre1.childElementCount === 0 && torre2.childElementCount === 0) {
         containerResultado.style.display = "flex"
     }
@@ -190,13 +234,17 @@ function win(){
 
 // ***************** JOGAR DE NOVO ***************//
 
-jogarNovamente.addEventListener("click", reset)
+jogarNovamente.addEventListener("click", reset) // construtor da torre
 
 function reset() {
- 
+
+    const torre3 = document.querySelector("#torre3")
+
     torre3.innerHTML = ""
     rodape.innerHTML = ""
     mudancas = 0
+
+    geracaoDisco(nivelDificuldade)
 
     containerResultado.style.display = "none"
 
@@ -208,10 +256,12 @@ function reset() {
 escolher.addEventListener("click", escolherDificuldade)
 
 function escolherDificuldade() {
- 
+    const torre3 = document.querySelector("#torre3")
+
     torre3.innerHTML = ""
     rodape.innerHTML = ""
     mudancas = 0
+    containerJogada.innerHTML = ''
 
     containerResultado.style.display = "none"
     containerJogada.style.display= "none"

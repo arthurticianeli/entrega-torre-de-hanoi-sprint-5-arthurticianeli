@@ -206,24 +206,31 @@ body {
 }
 
 #disco1 {
-  width: 25vw;
+  width: 30vw;
   height: 10vh;
   margin: 2px;
   border-radius: 10px;
 }
 #disco2 {
-  width: 20vw;
+  width: 25vw;
   height: 10vh;
   margin: 2px;
   border-radius: 10px;
 }
 #disco3 {
-  width: 15vw;
+  width: 20vw;
   height: 10vh;
   margin: 2px;
   border-radius: 10px;
 }
 #disco4 {
+  width: 15vw;
+  height: 10vh;
+  margin: 2px;
+  border-radius: 10px;
+}
+
+#disco5 {
   width: 10vw;
   height: 10vh;
   margin: 2px;
