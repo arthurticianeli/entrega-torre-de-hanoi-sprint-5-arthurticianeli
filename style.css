@@ -298,7 +298,7 @@ body {
 .moon {
   z-index: -1;
   position: absolute;
-  top: 40px;
+  top: 100px;
   left: 310px;
   width: 40px;
   height: 40px;
@@ -528,6 +528,11 @@ footer span {
   #containerResultado {
     top: 30vh;
     left: 14vw;
+  }
+
+  .moon {
+    top: 40px;
+    left: 30px;
   }
 }
 

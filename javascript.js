@@ -34,7 +34,7 @@ const showClik = document.createElement('span')
 // precisa confirmar o local do mostrador de contagem
 function atualizaClick (mudancas){
 
-    showClik.innerText = "Quantidade de clicks: " + mudancas
+    showClik.innerText = "Quantidade de movimentos: " + mudancas
 
     document.querySelector("footer").appendChild(showClik)
 
@@ -62,8 +62,7 @@ function selectTower(e) {
     
         } else if(countClick === 1){
 
-            console.log("O valor de click é igual a 1")
-        
+       
             changeTower(torre,disco) // chama a função que irá movimentar os discos
             countClick = 0 // zera o incremento, voltando a ser o 'primero click'
 
@@ -150,6 +149,8 @@ torre2Play.addEventListener("click", dificuldade)
 function dificuldade (e) {
     
     escolha.style.display = "flex"
+
+//  CHAMAR FUNÇÃO QUE CRIA OS DISCOS
     
 }
 
@@ -166,6 +167,7 @@ function mostrarJogada (e){
 
     return e.target.id
 
+
 }
 
 // ***************** FECHAR REGRAS ***************//
@@ -175,7 +177,6 @@ fechar.addEventListener("click", close)
 function close() {
      containerRegras.style.display = "none"
 
-    //  CHAMAR FUNÇÃO QUE CRIA OS DISCOS
 }
 
 
@@ -198,8 +199,6 @@ function reset() {
     mudancas = 0
 
     containerResultado.style.display = "none"
-
-    // INSERIR A FUNÇÃO QUE CRIA OS DISCOS
 
 }
 
