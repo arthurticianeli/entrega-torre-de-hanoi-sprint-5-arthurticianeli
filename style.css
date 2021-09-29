@@ -24,7 +24,20 @@ body {
   border: 4px solid #2da1d7;
 }
 
+/* MOUSE HOVER TOWER */
+
+.effectTower {
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.effectTower:hover {
+  cursor: pointer;
+  border-right: 4px solid #2da1d7;
+  border-left: 4px solid #2da1d7;
+}
+
 /* GRADIENTE */
+
 .effectBackground {
   background: linear-gradient(-45deg, #2da1d7, #105870, #2da1d7, #105870);
   background-size: 400% 400%;

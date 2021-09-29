@@ -36,6 +36,7 @@ function geracaoTorreHanoi(n){
         const torresJogo = document.createElement('div')
         torresJogo.id = `torre${i+1}`
         jogada.appendChild(torresJogo)
+        torresJogo.classList.add("effectTower")
     }
     geracaoDisco(n)
 
@@ -121,11 +122,11 @@ function atualizaClick(mudancas) {
 
 }
 
-//***** REGRA: TARGET DO CLICK NA TORRE E VERIFICAÇÃO DA CONDIÇÃO DE VITÓRIA *****//
+//***** REGRA: TARGET DO CLICK E VERIFICAÇÃO DA CONDIÇÃO DE VITÓRIA *****//
 
 function selectTower(e) {
-    
-    if(e.target.tagName === 'DIV'){
+
+    if(e.target.id.includes("torre")){
 
         torre = e.target.id 
 
@@ -146,7 +147,28 @@ function selectTower(e) {
 
         win()
     }
+    
+    if(e.target.parentNode.id.includes('torre')){
 
+        torre = e.target.parentNode.id
+
+        if(countClick === 0){
+           
+            disco = selectDisc(torre) 
+            
+            if(disco !== null){
+                countClick++
+            }
+    
+        } else if(countClick === 1){
+       
+            changeTower(torre,disco)
+            countClick = 0
+
+        }
+
+        win()
+    }
 }
 
 //********************* REGRA: SELECIONAR O DISCO PELO LASTCHILD **********************//
