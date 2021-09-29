@@ -7,7 +7,6 @@
 
 // }
 
-
 function geracaoTorreHanoi(n){
     const jogada = document.createElement('section')
     const body = document.querySelector('body')
