@@ -19,7 +19,7 @@ function dificuldade (e) {
    escolha.style.display = "flex"
 
 
-
+}
 
 function geracaoTorreHanoi(n){
     const jogada = document.createElement('section')
