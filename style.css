@@ -4,8 +4,8 @@ body {
   overflow: hidden;
   margin: 0;
   background: radial-gradient(
-    182.25% 182.25% at 50% 196.74%,
-    rgba(71, 71, 71, 0) 0%,
+    44.97% 72.1% at 35.99% 22.83%,
+    rgba(71, 71, 71, 0.81) 0%,
     #0f1627 100%
   );
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -295,6 +295,18 @@ body {
 
 /***************** ESTRELAS ****************/
 
+.moon {
+  z-index: -1;
+  position: absolute;
+  top: 40px;
+  left: 310px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 40px 20px #fff, /* inner white */ 0 0 118px 79px #0f1627,
+    /* middle #0f1627 */ 0 0 70px 68px #fff;
+}
 .asterisk1 {
   position: absolute;
   left: 30%;
@@ -506,7 +518,7 @@ footer span {
   }
 
   #regras {
-    top: 21vh;
+    top: 2vh;
     left: 16vw;
   }
   #regras span {
